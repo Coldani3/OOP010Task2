@@ -14,7 +14,11 @@ namespace OOPAssignment010T2
             Grade grade2 = new Grade(40, 0.3f, module, assignment2);
             GradeProfile profile = new GradeProfile();
             profile.AddGrades(module, new List<Grade>() {grade, grade2});
+            Report report = new Report(profile, DateTime.Now);
+
             profile.Display();
+            OOPUtil.WriteThickDivider();
+            report.Display();
         }
     }
 }

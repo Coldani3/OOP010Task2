@@ -15,11 +15,15 @@ namespace OOPAssignment010T2
             this.Assignment = assignment;
         }
 
-        public Grade(int mark, float weight, Module module)
+        public Grade(int mark, float weight, Module module) : this(mark, weight)
+        {
+            this.Module = module;
+        }
+
+        public Grade(int mark, float weight)
         {
             this.Mark = mark;
             this.Weight = weight;
-            this.Module = module;
         }
 
         public void Display()

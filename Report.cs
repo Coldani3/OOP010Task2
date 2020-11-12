@@ -32,7 +32,7 @@ namespace OOPAssignment010T2
             }
         }
 
-        public string GetAverageGrade()
+        public Grade GetAverageGrade()
         {
             int gradeCount = 0;
             int gradeTotal = 0;
@@ -43,12 +43,21 @@ namespace OOPAssignment010T2
                 gradeTotal += grade.Mark;
             }
 
-            return OOPUtil.MarksToGrade(gradeTotal);
+            return new Grade(gradeTotal, 1.00, )
         }
 
         public string GetHumanReadableDate()
         {
             return this.Date.ToString();
+        }
+
+        public void Display()
+        {
+            Console.WriteLine($"Report on date {this.Date}:");
+
+            Console.WriteLine($"Overall Average Grade: " + this.GetAverageGrade() + "");
+            Console.WriteLine($"Individual Grades:");
+            this.studentGradeProfile.Display();
         }
     }
 }

@@ -51,6 +51,8 @@ namespace OOPAssignment010T2
                 {
                     grade.Display();
                 }
+
+                OOPUtil.WriteThinDivider();
             }
         }
     }

@@ -35,5 +35,15 @@ namespace OOPAssignment010T2
 
             return grade;
         }
+
+        public static void WriteThickDivider()
+        {
+            Console.WriteLine("==============================");
+        }
+
+        public static void WriteThinDivider()
+        {
+            Console.WriteLine("------------------------------");
+        }
     }
 }
