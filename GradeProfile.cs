@@ -22,15 +22,33 @@ namespace OOPAssignment010T2
             }
 
             int averageMarks = marks / gradeCount;
-
-            //TODO stringify
-
-            return "";
+            return OOPUtil.MarksToGrade(averageMarks);
         }
 
         public void AddGrade(Grade grade)
         {
             this.Grades[grade.Module].Add(grade);
+        }
+
+        public void AddGrade(Module module, Grade grade)
+        {
+            this.Grades.Add(module, new List<Grade>() {grade});
+        }
+
+        public void AddGrades(Module module, List<Grade> grades)
+        {
+            this.Grades.Add(module, grades);
+        }
+
+        public void Display()
+        {
+            foreach (List<Grade> grades in this.Grades.Values)
+            {
+                foreach (Grade grade in grades)
+                {
+                    grade.Display();
+                }
+            }
         }
     }
 }

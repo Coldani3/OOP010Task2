@@ -4,15 +4,14 @@ namespace OOPAssignment010T2
 {
     public class Grade
     {
-        public string GradeString { get; private set; }
+        public string GradeString { get => OOPUtil.MarksToGrade(this.Mark); }
         public int Mark { get; private set; }
         public float Weight;
         public Module Module { get; private set; }
         public Assignment Assignment { get; private set; }
 
-        public Grade(string gradeString, int mark, float weight, Module module, Assignment assignment)
+        public Grade(int mark, float weight, Module module, Assignment assignment)
         {
-            this.GradeString = gradeString;
             this.Mark = mark;
             this.Weight = weight;
             this.Module = module;
