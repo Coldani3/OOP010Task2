@@ -13,22 +13,22 @@ namespace OOPAssignment010T2
         {
             string grade = "Fail";
 
-            if (marks > 30)
+            if (marks >= 30)
             {
                 grade = "Near Pass";
             }
 
-            if (marks > 40)
+            if (marks >= 40)
             {
                 grade = "Pass";
             }
 
-            if (marks > 60)
+            if (marks >= 60)
             {
                 grade = "Merit";
             }
 
-            if (marks > 70)
+            if (marks >= 70)
             {
                 grade = "Distinction";
             }

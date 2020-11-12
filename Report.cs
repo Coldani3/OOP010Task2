@@ -13,11 +13,23 @@ namespace OOPAssignment010T2
         {
             this.studentGradeProfile = studentGradeProfile;
             this.Date = date;
+
+            this.CalculateFromStudentGradeProfile();
         }
 
         private void CalculateFromStudentGradeProfile()
         {
+            foreach (Module module in this.studentGradeProfile.Grades.Keys)
+            {
+                int totalMarks = 0;
 
+                foreach (Grade grade in this.studentGradeProfile.Grades[module])
+                {
+                    totalMarks += (int) (grade.Mark * grade.Weight);
+                }
+
+                this.ModuleGrades.Add(module, new Grade(totalMarks, 1.00f, module));
+            }
         }
 
         public string GetAverageGrade()
@@ -38,7 +50,5 @@ namespace OOPAssignment010T2
         {
             return this.Date.ToString();
         }
-
-
     }
 }

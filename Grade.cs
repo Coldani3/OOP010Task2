@@ -10,19 +10,28 @@ namespace OOPAssignment010T2
         public Module Module { get; private set; }
         public Assignment Assignment { get; private set; }
 
-        public Grade(int mark, float weight, Module module, Assignment assignment)
+        public Grade(int mark, float weight, Module module, Assignment assignment) : this(mark, weight, module)
+        {
+            this.Assignment = assignment;
+        }
+
+        public Grade(int mark, float weight, Module module)
         {
             this.Mark = mark;
             this.Weight = weight;
             this.Module = module;
-            this.Assignment = assignment;
         }
 
         public void Display()
         {
             Console.WriteLine($"Module: {this.Module.ModuleName}, {this.Module.ModuleCode}");
-            Console.WriteLine($"Assignment ID: {this.Assignment.AssignmentID}");
-            Console.WriteLine($"Assignment No: {this.Assignment.AssignmentNo}");
+
+            if (this.Assignment != null)
+            {
+                Console.WriteLine($"Assignment ID: {this.Assignment.AssignmentID}");
+                Console.WriteLine($"Assignment No: {this.Assignment.AssignmentNo}");
+            }
+
             Console.WriteLine($"Grade: {this.GradeString}, {this.Mark}/100");
             Console.WriteLine($"Weight: {this.Weight}");
         }

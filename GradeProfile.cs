@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace OOPAssignment010T2
 {
@@ -42,9 +43,11 @@ namespace OOPAssignment010T2
 
         public void Display()
         {
-            foreach (List<Grade> grades in this.Grades.Values)
+            foreach (Module module in this.Grades.Keys)
             {
-                foreach (Grade grade in grades)
+                Console.WriteLine($"Grades for Module {module.ModuleName}, {module.ModuleCode}:");
+
+                foreach (Grade grade in this.Grades[module])
                 {
                     grade.Display();
                 }
