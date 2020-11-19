@@ -43,7 +43,7 @@ namespace OOPAssignment010T2
                 gradeTotal += grade.Mark;
             }
 
-            return new Grade(gradeTotal, 1.00, )
+            return new Grade(gradeTotal, 1.00f);
         }
 
         public string GetHumanReadableDate()

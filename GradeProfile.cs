@@ -43,16 +43,22 @@ namespace OOPAssignment010T2
 
         public void Display()
         {
-            foreach (Module module in this.Grades.Keys)
+            if (this.Grades.Count > 0)
             {
-                Console.WriteLine($"Grades for Module {module.ModuleName}, {module.ModuleCode}:");
-
-                foreach (Grade grade in this.Grades[module])
+                foreach (Module module in this.Grades.Keys)
                 {
-                    grade.Display();
-                }
+                    if (this.Grades[module].Count > 0)
+                    {
+                        Console.WriteLine($"Grades for Module {module.ModuleName}, {module.ModuleCode}:");
 
-                OOPUtil.WriteThinDivider();
+                        foreach (Grade grade in this.Grades[module])
+                        {
+                            grade.Display();
+                        }
+                    }
+
+                    OOPUtil.WriteThinDivider();
+                }
             }
         }
     }

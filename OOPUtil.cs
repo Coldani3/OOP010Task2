@@ -45,5 +45,13 @@ namespace OOPAssignment010T2
         {
             Console.WriteLine("------------------------------");
         }
+
+        public static void WriteIfExists(string obj, string message)
+        {
+            if (obj != null && obj != "")
+            {
+                Console.WriteLine(message);
+            }
+        }
     }
 }
