@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace OOPAssignment010T2
 {
     public class Module
@@ -10,7 +12,15 @@ namespace OOPAssignment010T2
         {
             this.ModuleName = moduleName;
             this.ModuleCode = moduleCode;
-            this.Assignments = assignments;
+
+            if (assignments.Length <= 2)
+            {
+                this.Assignments = assignments;
+            }
+            else
+            {
+                this.Assignments = (Assignment[]) assignments.Take(2);
+            }
         }
     }
 }

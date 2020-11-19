@@ -48,7 +48,7 @@ namespace OOPAssignment010T2
 
         public static void WriteIfExists(string obj, string message)
         {
-            if (obj != null && obj != "")
+            if (obj != null && obj.Length > 0)
             {
                 Console.WriteLine(message);
             }

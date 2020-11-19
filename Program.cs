@@ -7,7 +7,21 @@ namespace OOPAssignment010T2
     {
         static void Main(string[] args)
         {
-            Student danielStudent = new Student("Daniel", "Cole", "P110128431", "Male");
+            Console.WriteLine("Input student first name:");
+            string studentFirstName = Console.ReadLine();
+            Console.WriteLine("Input student first name (press enter to skip):");
+            string studentMiddleName = Console.ReadLine();
+            Console.WriteLine("Input student last name:");
+            string studentLastName = Console.ReadLine();
+            Console.WriteLine("Input student ID:");
+            string studentID = Console.ReadLine();
+            Console.WriteLine("Input student gender ('None' or 'Prefer not to say' where appropriate):");
+            string studentGender = Console.ReadLine();
+
+            //TODO: optional fields
+
+            Student student = new Student(studentFirstName, studentLastName, studentID, studentGender);
+            student.MiddleName = studentMiddleName;
 
             Assignment assignment = new Assignment(2, "011", DateTime.Now, DateTime.Now.AddDays(7));
             Assignment assignment2 = new Assignment(1, "010", DateTime.Now, DateTime.Now.AddDays(7));
@@ -19,13 +33,13 @@ namespace OOPAssignment010T2
 
             profile.AddGrades(module, grade, grade2);
             Report report = new Report(profile, DateTime.Now);
-            danielStudent.StudentGradeProfile = profile;
-            danielStudent.ReportCards.Add(report);
+            student.StudentGradeProfile = profile;
+            student.ReportCards.Add(report);
 
             // profile.Display();
             // OOPUtil.WriteThickDivider();
             //report.Display();
-            danielStudent.DisplayDetails();
+            student.DisplayDetails();
         }
     }
 }

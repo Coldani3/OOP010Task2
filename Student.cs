@@ -6,11 +6,11 @@ namespace OOPAssignment010T2
     public class Student
     {
         public string FirstName;
-        public string MiddleName = "";
         public string LastName;
         public string Gender;
         public string StudentID;
         //Optional fields
+        public string MiddleName = "";
         public string Email = "";
         public string StudentTelephoneNo = "";
         public string HomePhoneNo = "";
@@ -26,6 +26,7 @@ namespace OOPAssignment010T2
             this.FirstName = firstName;
             this.LastName = lastName;
             this.StudentID = studentID;
+            this.Gender = gender;
         }
 
         public Student(string firstName, string lastName, string studentID, string gender, GradeProfile gradeProfile) : this(firstName,lastName,studentID,gender)
@@ -44,15 +45,18 @@ namespace OOPAssignment010T2
             OOPUtil.WriteIfExists(this.HomeAddress, $"Home Address: {this.HomeAddress}");
             OOPUtil.WriteIfExists(this.TermTimeAddress, $"Term Time Address: {this.TermTimeAddress}");
 
-            Console.WriteLine("Parent Name: ");
+            if (this.ParentFirstName != "" && this.ParentLastName != "")
+            {
+                Console.WriteLine("Parent Name: ");
+            }
             
             if (this.ParentFirstName != "")
             {
-                Console.Write(this.ParentFirstName);
+                Console.Write(this.ParentFirstName + " ");
             }
             else if (this.ParentLastName != "")
             {
-                Console.Write("<unknown>");
+                Console.Write("<unknown> ");
             }
 
             if (this.ParentLastName != "")
