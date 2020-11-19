@@ -36,9 +36,9 @@ namespace OOPAssignment010T2
             this.Grades.Add(module, new List<Grade>() {grade});
         }
 
-        public void AddGrades(Module module, List<Grade> grades)
+        public void AddGrades(Module module, params Grade[] grades)
         {
-            this.Grades.Add(module, grades);
+            this.Grades.Add(module, new List<Grade>(grades));
         }
 
         public void Display()
@@ -54,6 +54,7 @@ namespace OOPAssignment010T2
                         foreach (Grade grade in this.Grades[module])
                         {
                             grade.Display();
+                            Console.Write("\n");
                         }
                     }
 

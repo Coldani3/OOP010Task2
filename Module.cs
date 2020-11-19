@@ -6,7 +6,7 @@ namespace OOPAssignment010T2
         public string ModuleCode { get; private set; }
         public Assignment[] Assignments = new Assignment[2];
 
-        public Module(string moduleName, string moduleCode, Assignment[] assignments)
+        public Module(string moduleName, string moduleCode, params Assignment[] assignments)
         {
             this.ModuleName = moduleName;
             this.ModuleCode = moduleCode;

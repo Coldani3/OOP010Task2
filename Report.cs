@@ -53,10 +53,11 @@ namespace OOPAssignment010T2
 
         public void Display()
         {
-            Console.WriteLine($"Report on date {this.Date}:");
+            Console.WriteLine($"\nReport on date {this.Date}:");
 
-            Console.WriteLine($"Overall Average Grade: " + this.GetAverageGrade() + "");
-            Console.WriteLine($"Individual Grades:");
+            Console.WriteLine($"Overall Average Grade: ");
+            this.GetAverageGrade().Display();
+            Console.WriteLine($"\nIndividual Grades: \n");
             this.studentGradeProfile.Display();
         }
     }

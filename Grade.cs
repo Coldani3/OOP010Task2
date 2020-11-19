@@ -28,16 +28,17 @@ namespace OOPAssignment010T2
 
         public void Display()
         {
-            Console.WriteLine($"Module: {this.Module.ModuleName}, {this.Module.ModuleCode}");
+            if (this.Module != null)
+            {
+                Console.WriteLine($"Module: {this.Module.ModuleName}, {this.Module.ModuleCode}");
+            }
 
             if (this.Assignment != null)
             {
-                Console.WriteLine($"Assignment ID: {this.Assignment.AssignmentID}");
-                Console.WriteLine($"Assignment No: {this.Assignment.AssignmentNo}");
+                Console.WriteLine($"Assignment ID: {this.Assignment.AssignmentID}, Assignment No: {this.Assignment.AssignmentNo}");
             }
 
-            Console.WriteLine($"Grade: {this.GradeString}, {this.Mark}/100");
-            Console.WriteLine($"Weight: {this.Weight}");
+            Console.WriteLine($"Grade: {this.GradeString}, {this.Mark}/100, Weight: {this.Weight}");
         }
     }
 }

@@ -50,7 +50,7 @@ namespace OOPAssignment010T2
             {
                 Console.Write(this.ParentFirstName);
             }
-            else
+            else if (this.ParentLastName != "")
             {
                 Console.Write("<unknown>");
             }
@@ -58,6 +58,14 @@ namespace OOPAssignment010T2
             if (this.ParentLastName != "")
             {
                 Console.Write(this.ParentLastName);
+            }
+
+            Console.WriteLine("Grades Profile:");
+            this.StudentGradeProfile.Display();
+            Console.WriteLine("Reports: ");
+            foreach (Report report in this.ReportCards)
+            {
+                report.Display();
             }
         }
     }
